@@ -1,5 +1,6 @@
 package chapter14.collection;
 
+import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -8,7 +9,6 @@ class Person {
 	int age;
 
 	public Person(String name, int age) {
-		super();
 		this.name = name;
 		this.age = age;
 
@@ -20,7 +20,7 @@ class Person {
 	}
 }
 
-class myComparator implements Comparator<Person> {
+class MyComparator implements Comparator<Person> {
 	@Override
 	public int compare(Person p1, Person p2) {
 		return p1.name.compareTo(p2.name); // String 클래스에서 정의된 compareTo
@@ -31,11 +31,11 @@ class myComparator implements Comparator<Person> {
 public class Comparator_Test {
 
 	public static void main(String[] args) {
-		Set<Member> set1 = new TreeSet<>(new Comparator);
+		Set<Person> set1 = new TreeSet<>(new MyComparator());
 		set1.add(new Person("홍길동", 30));
 		set1.add(new Person("강감찬", 50));
 		set1.add(new Person("이순신", 90));
-		
+
 		for (Person person : set1) {
 			System.out.println(person);
 		}
