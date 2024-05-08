@@ -23,7 +23,7 @@ public class Finally_Test {
 			System.out.println("예외 처리");
 		} finally { // 무조건 실행되어지는 출력
 			System.out.println("해제");
-			scan.close();
+			scan.close(); // 자원 할당을 해제하는 메서드
 
 		}
 		System.out.println("프로그램 종료");
